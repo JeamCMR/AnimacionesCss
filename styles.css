@@ -7,6 +7,17 @@
     max-width: 500px;
     height: 55vw;
     max-height: 500px;
+    animation-name: wheel;
+    /*Para agregar una animacion una clase selector se usa la propidad animation-name
+     y en valor se indica el nombre de la animacion*/
+    animation-duration: 10s;
+    /*Con animation-duration se especifica la duracion en milisegundos o segundos*/
+    animation-iteration-count: infinite;
+    /*Con esta propiedad podemos establecer la cantidad de veces que se va a repetir la animaicon
+    en este caso queremos que la noria siga girando */
+    animation-timing-function: linear;
+    /*Con esta propiedad indica la progresion de la animacion con el tiempo*/
+
 }
 
 /* lineas de la noria */
@@ -49,6 +60,9 @@
     position: absolute;
     border: 2px solid;
     transform-origin: 50% 0%;
+    animation: cabins 10s ease-in-out infinite;
+    /*Con la propieda animation se puede especificar todas las propiedas anteriores
+    se indica el nombre de la animacion, el tiempo, la progresion y la repeticiones de la animacion*/
 }
 
 .cabin:nth-of-type(1) {
@@ -79,4 +93,42 @@
 .cabin:nth-of-type(6) {
     right: 17%;
     top: 7%;
+}
+
+/* Reglas de animaciones con keyframes */
+
+@keyframes wheel {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes cabins {
+    0% {
+        transform: rotate(0deg);
+        background-color: yellow;
+    }
+
+    25% {
+        background-color: yellow;
+    }
+
+    50% {
+
+        background-color: purple;
+    }
+
+    75% {
+        background-color: yellow;
+    }
+
+
+    100% {
+        transform: rotate(-360deg);
+    }
 }
